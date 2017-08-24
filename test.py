@@ -4,7 +4,7 @@ for key, value in os.environ.items():
 
 TRAVIS_FORK_PULL_REQUEST = False
 if ('TRAVIS_PULL_REQUEST_SLUG' in os.environ
-    and not os.environ['TRAVIS_PULL_REQUEST_SLUG']):
+    and os.environ['TRAVIS_PULL_REQUEST_SLUG']):
     if os.environ['TRAVIS_REPO_SLUG'] != os.environ['TRAVIS_PULL_REQUEST_SLUG']:
         TRAVIS_FORK_PULL_REQUEST = True
 print('TRAVIS_FORK_PULL_REQUEST', TRAVIS_FORK_PULL_REQUEST)
